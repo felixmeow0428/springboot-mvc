@@ -107,7 +107,7 @@ public class ApiController {
 		// ok => HTTP 200
 		return ResponseEntity.ok(ApiResponse.success("計算成功", bmi));
 	}
-	//Test
+	
 	
 	
 }
