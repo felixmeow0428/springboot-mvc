@@ -114,7 +114,7 @@ public class ApiController {
 	 * 網址: http://localhost:8080/api/json/age?age=17&age=21&age=20
 	 * 請計算出平均年齡
 	 * */
-	
+	//1
 	
 	
 }
