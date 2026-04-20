@@ -107,6 +107,13 @@ public class ApiController {
 		// ok => HTTP 200
 		return ResponseEntity.ok(ApiResponse.success("計算成功", bmi));
 	}
+
+	/**
+	 * 6. 同名多筆資料
+	 * 路徑: /json/age?age=17&age=21&age=20
+	 * 網址: http://localhost:8080/api/json/age?age=17&age=21&age=20
+	 * 請計算出平均年齡
+	 * */
 	
 	
 	
