@@ -157,6 +157,7 @@ public class ApiController {
 				);		
 		return ResponseEntity.ok(ApiResponse.success("計算成功", data));
 	}
+	
 	/**
 	 * 8. 多筆參數轉 Map
 	 * name 書名(String), price 價格(Double), amount 數量(Integer), pub 出刊/停刊(Boolean)

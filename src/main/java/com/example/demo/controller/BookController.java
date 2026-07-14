@@ -1,5 +1,9 @@
 package com.example.demo.controller;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 /**
  * BookController
  * ============================================
@@ -72,6 +76,10 @@ package com.example.demo.controller;
  *
  * ============================================
  */
+
+@CrossOrigin(origins = {"https://localhost:5173"}) //允許跨域請求給react使用
+@RestController
+@RequestMapping("/book")
 public class BookController {
 
 }
