@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -95,6 +96,7 @@ public class BookController {
 	@Qualifier("BookServiceImpl") //指定實現類到 BookServiceImpl ,若該 Interface 只有一個實現類 Qualifier 可省略不寫
 	private BookService bookService;
 	
+	@GetMapping
 	public ResponseEntity<ApiResponse<List<Book>>> findAllBooks() {
 		List<Book> books = bookService.findAllBooks();
 		if(books.size() == 0) {
