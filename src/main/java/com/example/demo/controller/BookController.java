@@ -1,8 +1,17 @@
 package com.example.demo.controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.model.Book;
+import com.example.demo.response.ApiResponse;
+import com.example.demo.serivce.BookService;
 
 /**
  * BookController
@@ -81,5 +90,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/book")
 public class BookController {
+	
+	@Autowired
+	@Qualifier("BookServiceImpl") //指定實現類到 BookServiceImpl ,若該 Interface 只有一個實現類 Qualifier 可省略不寫
+	private BookService bookService;
+	
+	public ResponseEntity<ApiResponse<List<Book>>> findAllBooks() {
+		List<Book> books = bookService.findAllBooks();
+		if(books.size() == 0) {
+			return ResponseEntity.badRequest().body(ApiResponse.error("查無任何書籍"));
+			
+		}
+		return ResponseEntity.ok(ApiResponse.success("查詢成功", books));
+	}
 
 }
