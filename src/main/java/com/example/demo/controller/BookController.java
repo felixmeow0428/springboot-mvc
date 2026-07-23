@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.Book;
 import com.example.demo.response.ApiResponse;
-import com.example.demo.serivce.BookService;
+import com.example.demo.service.BookService;
 
 /**
  * BookController
